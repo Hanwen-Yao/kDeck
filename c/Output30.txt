@@ -1,0 +1,1051 @@
+Collisions:
+
+462 1114 1605 2415 1620 3200 3940 4980 1670 3960 4560 6840 4170 8220 8070 10440 1650 3820 5460 8280 4620 9120 10860 13980 4160 9600 11130 16830 8340 16440 16230 21141 1119 2640 3740 5640 3900 7680 9240 11940 3340 7905 9120 13680 8310 16380 16080 20835 2505 5820 8370 12690 7020 13860 16650 21330 5340 12600 14520 21870 10860 21465 21267 27132
+
+27132 21267 21465 10860 21870 14520 12600 5340 21330 16650 13860 7020 12690 8370 5820 2505 20835 16080 16380 8310 13680 9120 7905 3340 11940 9240 7680 3900 5640 3740 2640 1119 21141 16230 16440 8340 16830 11130 9600 4160 13980 10860 9120 4620 8280 5460 3820 1650 10440 8070 8220 4170 6840 4560 3960 1670 4980 3940 3200 1620 2415 1605 1114 462
+
+462 1119 1650 2505 1670 3340 4160 5340 1620 3900 4620 7020 4170 8310 8340 10860 1605 3740 5460 8370 4560 9120 11130 14520 3940 9240 10860 16650 8070 16080 16230 21267 1114 2640 3820 5820 3960 7905 9600 12600 3200 7680 9120 13860 8220 16380 16440 21465 2415 5640 8280 12690 6840 13680 16830 21870 4980 11940 13980 21330 10440 20835 21141 27132
+
+27132 21141 20835 10440 21330 13980 11940 4980 21870 16830 13680 6840 12690 8280 5640 2415 21465 16440 16380 8220 13860 9120 7680 3200 12600 9600 7905 3960 5820 3820 2640 1114 21267 16230 16080 8070 16650 10860 9240 3940 14520 11130 9120 4560 8370 5460 3740 1605 10860 8340 8310 4170 7020 4620 3900 1620 5340 4160 3340 1670 2505 1650 1119 462
+
+Strings:
+011000001110000100011100000110
+100001110000010110000011100001
+
+
+--------------------------------------------------
+                    6-DECK, 29-30                
+--------------------------------------------------
+n = 30
+file_number = 128
+From file 0: 4194561; time: 2m,55s    
+From file 1: 4195715; time: 2m,41s    
+From file 2: 4191955; time: 2m,16s    
+From file 3: 4195790; time: 2m,22s    
+From file 4: 4194999; time: 2m,18s    
+From file 5: 4194943; time: 2m,16s    
+From file 6: 4191879; time: 2m,21s    
+From file 7: 4198411; time: 2m,35s    
+From file 8: 4195880; time: 2m,18s    
+From file 9: 4198314; time: 2m,19s    
+From file 10: 4193539; time: 2m,17s    
+From file 11: 4194466; time: 2m,18s    
+From file 12: 4195425; time: 2m,20s    
+From file 13: 4192449; time: 2m,18s    
+From file 14: 4197746; time: 2m,20s    
+From file 15: 4196359; time: 2m,26s    
+From file 16: 4192660; time: 2m,18s    
+From file 17: 4196408; time: 2m,20s    
+From file 18: 4197060; time: 2m,20s    
+From file 19: 4192867; time: 2m,14s    
+From file 20: 4195395; time: 2m,13s    
+From file 21: 4191534; time: 2m,14s    
+From file 22: 4192325; time: 2m,16s    
+From file 23: 4194195; time: 2m,19s    
+From file 24: 4195164; time: 2m,14s    
+From file 25: 4195118; time: 2m,13s    
+From file 26: 4190119; time: 2m,13s    
+From file 27: 4193371; time: 2m,15s    
+From file 28: 4191994; time: 2m,22s    
+From file 29: 4194001; time: 2m,26s    
+From file 30: 4194030; time: 2m,32s    
+From file 31: 4194035; time: 2m,13s    
+From file 32: 4195013; time: 2m,15s    
+From file 33: 4194448; time: 2m,19s    
+From file 34: 4195366; time: 2m,18s    
+From file 35: 4194696; time: 2m,15s    
+From file 36: 4196197; time: 2m,19s    
+From file 37: 4195023; time: 2m,18s    
+From file 38: 4193363; time: 2m,14s    
+From file 39: 4194070; time: 2m,14s    
+From file 40: 4198265; time: 2m,14s    
+From file 41: 4196153; time: 2m,15s    
+From file 42: 4196221; time: 2m,14s    
+From file 43: 4194833; time: 2m,14s    
+From file 44: 4194120; time: 2m,14s    
+From file 45: 4193316; time: 2m,17s    
+From file 46: 4195113; time: 2m,22s    
+From file 47: 4194721; time: 2m,23s    
+From file 48: 4189606; time: 2m,14s    
+From file 49: 4195580; time: 2m,14s    
+From file 50: 4195908; time: 2m,14s    
+From file 51: 4190260; time: 2m,31s    
+From file 52: 4191322; time: 2m,14s    
+From file 53: 4193874; time: 2m,16s    
+From file 54: 4193314; time: 2m,15s    
+From file 55: 4194228; time: 2m,14s    
+From file 56: 4190969; time: 2m,13s    
+From file 57: 4192715; time: 2m,14s    
+From file 58: 4194759; time: 2m,13s    
+From file 59: 4194007; time: 2m,13s    
+From file 60: 4197514; time: 2m,15s    
+From file 61: 4193245; time: 2m,14s    
+From file 62: 4193958; time: 2m,14s    
+From file 63: 4194662; time: 2m,14s    
+From file 64: 4192812; time: 2m,17s    
+From file 65: 4194699; time: 2m,16s    
+From file 66: 4193433; time: 2m,35s    
+From file 67: 4194625; time: 2m,14s    
+From file 68: 4194896; time: 2m,14s    
+From file 69: 4193035; time: 2m,13s    
+From file 70: 4195035; time: 2m,14s    
+From file 71: 4193113; time: 2m,14s    
+From file 72: 4193251; time: 2m,15s    
+From file 73: 4191862; time: 2m,16s    
+From file 74: 4194870; time: 2m,15s    
+From file 75: 4195552; time: 2m,14s    
+From file 76: 4198318; time: 2m,14s    
+From file 77: 4194983; time: 2m,19s    
+From file 78: 4196926; time: 2m,14s    
+From file 79: 4195462; time: 2m,14s    
+From file 80: 4194346; time: 2m,18s    
+From file 81: 4195838; time: 2m,14s    
+From file 82: 4191661; time: 2m,40s    
+From file 83: 4196046; time: 2m,15s    
+From file 84: 4193754; time: 2m,15s    
+From file 85: 4193049; time: 2m,14s    
+From file 86: 4191320; time: 2m,15s    
+From file 87: 4195248; time: 2m,14s    
+From file 88: 4195097; time: 2m,14s    
+From file 89: 4193886; time: 2m,13s    
+From file 90: 4195208; time: 2m,30s    
+From file 91: 4191951; time: 2m,32s    
+From file 92: 4193186; time: 2m,15s    
+From file 93: 4193460; time: 2m,20s    
+From file 94: 4191466; time: 2m,30s    
+From file 95: 4196398; time: 2m,23s    
+From file 96: 4193078; time: 2m,23s    
+From file 97: 4192810; time: 2m,23s    
+From file 98: 4192985; time: 2m,18s    
+From file 99: 4194711; time: 2m,18s    
+From file 100: 4193578; time: 2m,27s    
+From file 101: 4193390; time: 2m,16s    
+From file 102: 4192893; time: 2m,15s    
+From file 103: 4200483; time: 2m,20s    
+From file 104: 4195937; time: 2m,14s    
+From file 105: 4193971; time: 2m,24s    
+From file 106: 4194160; time: 2m,24s    
+From file 107: 4191397; time: 2m,22s    
+From file 108: 4194892; time: 2m,17s    
+From file 109: 4195945; time: 2m,14s    
+From file 110: 4192358; time: 2m,14s    
+From file 111: 4197787; time: 2m,15s    
+From file 112: 4192610; time: 2m,16s    
+From file 113: 4194437; time: 2m,15s    
+From file 114: 4195367; time: 2m,30s    
+From file 115: 4191618; time: 2m,25s    
+From file 116: 4194635; time: 2m,26s    
+From file 117: 4197471; time: 2m,32s    
+From file 118: 4191725; time: 2m,25s    
+From file 119: 4193824; time: 2m,24s    
+From file 120: 4195876; time: 2m,25s    
+From file 121: 4193225; time: 2m,16s    
+From file 122: 4197344; time: 2m,25s    
+From file 123: 4191927; time: 2m,29s    
+From file 124: 4193219; time: 2m,21s    
+From file 125: 4192681; time: 2m,15s    
+From file 126: 4194262; time: 2m,15s    
+From file 127: 4195984; time: 2m,13s    
+K-Deck Calculation Time (to files):  4h,56m,22s
+Number of k-decks in each file:8386831,8385595,8389137,8390131,8390133,8389529,8388858,8392323,8387168,8384835,8389584,8393327,8392563,8385774,8391316,8391494,8388686,8387776,8383203,8389277,8390668,8387419,8391876,8385961,8389067,8390068,8385580,8392453,8387244,8386002,8386174,8388645,8391322,8385784,8388466,8385279,8387580,8391471,8391140,8389547,8385003,8381007,8390038,8389324,8387599,8388171,8386891,8384896,8386146,8387828,8384314,8385208,8388290,8383974,8390819,8394116,8381291,8392133,8380353,8395282,8390232,8387437,8390319,8388403,8392093,8389622,8387115,8388964,8390765,8384548,8387931,8389316,8388698,8388575,8386491,8390497,8387611,8389364,8386494,8387625,8384961,8391421,8393347,8384635,8384879,8393432,8392296,8391078,8388708,8395198,8388461,8391495,8393452,8392382,8386418,8391210,8390493,8389057,8390649,8388876,8385656,8389072,8389696,8391679,8387284,8386127,8384711,8386394,8384822,8387213,8392877,8389718,8391340,8385321,8388005,8391302,8386832,8390261,8388349,8387421,8383604,8386336,8392488,8390705,8391485,8389095,8389305,8388209,
+File 0:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386831; Firstcollisions: 32929; Collisions: 33226; Duplicates: 0
+---Time used:  1m,41s    
+---Memory used: 4096MB
+----------------------
+File 1:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385595; Firstcollisions: 32437; Collisions: 32707; Duplicates: 0
+---Time used:  1m, 9s    
+---Memory used: 4096MB
+----------------------
+File 2:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389137; Firstcollisions: 32966; Collisions: 33259; Duplicates: 0
+---Time used: 58s        
+---Memory used: 4096MB
+----------------------
+File 3:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390131; Firstcollisions: 32821; Collisions: 33084; Duplicates: 0
+---Time used: 51s        
+---Memory used: 4096MB
+----------------------
+File 4:
+Duplicates: 462 1114 1605 2415 1620 3200 3940 4980 1670 3960 4560 6840 4170 8220 8070 10440 1650 3820 5460 8280 4620 9120 10860 13980 4160 9600 11130 16830 8340 16440 16230 21141 1119 2640 3740 5640 3900 7680 9240 11940 3340 7905 9120 13680 8310 16380 16080 20835 2505 5820 8370 12690 7020 13860 16650 21330 5340 12600 14520 21870 10860 21465 21267 27132 
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390133; Firstcollisions: 32860; Collisions: 33106; Duplicates: 1
+---Time used: 48s        
+---Memory used: 4096MB
+----------------------
+File 5:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389529; Firstcollisions: 32669; Collisions: 32927; Duplicates: 0
+---Time used: 49s        
+---Memory used: 4096MB
+----------------------
+File 6:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388858; Firstcollisions: 32912; Collisions: 33185; Duplicates: 0
+---Time used: 48s        
+---Memory used: 4096MB
+----------------------
+File 7:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392323; Firstcollisions: 32876; Collisions: 33138; Duplicates: 0
+---Time used: 54s        
+---Memory used: 4096MB
+----------------------
+File 8:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387168; Firstcollisions: 32529; Collisions: 32771; Duplicates: 0
+---Time used: 54s        
+---Memory used: 4096MB
+----------------------
+File 9:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384835; Firstcollisions: 32589; Collisions: 32857; Duplicates: 0
+---Time used:  1m, 4s    
+---Memory used: 4096MB
+----------------------
+File 10:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389584; Firstcollisions: 32502; Collisions: 32751; Duplicates: 0
+---Time used:  1m, 1s    
+---Memory used: 4096MB
+----------------------
+File 11:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8393327; Firstcollisions: 32580; Collisions: 32830; Duplicates: 0
+---Time used:  1m,21s    
+---Memory used: 4096MB
+----------------------
+File 12:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392563; Firstcollisions: 32664; Collisions: 32926; Duplicates: 0
+---Time used: 20m,42s    
+---Memory used: 4096MB
+----------------------
+File 13:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385774; Firstcollisions: 32795; Collisions: 33038; Duplicates: 0
+---Time used: 52s        
+---Memory used: 4096MB
+----------------------
+File 14:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391316; Firstcollisions: 32683; Collisions: 32926; Duplicates: 0
+---Time used: 49s        
+---Memory used: 4096MB
+----------------------
+File 15:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391494; Firstcollisions: 32862; Collisions: 33141; Duplicates: 0
+---Time used: 48s        
+---Memory used: 4096MB
+----------------------
+File 16:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388686; Firstcollisions: 32747; Collisions: 32978; Duplicates: 0
+---Time used: 44s        
+---Memory used: 4096MB
+----------------------
+File 17:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387776; Firstcollisions: 32994; Collisions: 33262; Duplicates: 0
+---Time used: 43s        
+---Memory used: 4096MB
+----------------------
+File 18:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8383203; Firstcollisions: 32813; Collisions: 33073; Duplicates: 0
+---Time used: 53s        
+---Memory used: 4096MB
+----------------------
+File 19:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389277; Firstcollisions: 32640; Collisions: 32883; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 20:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390668; Firstcollisions: 32588; Collisions: 32866; Duplicates: 0
+---Time used: 32s        
+---Memory used: 4096MB
+----------------------
+File 21:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387419; Firstcollisions: 32730; Collisions: 32974; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 22:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391876; Firstcollisions: 33011; Collisions: 33249; Duplicates: 0
+---Time used: 39s        
+---Memory used: 4096MB
+----------------------
+File 23:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385961; Firstcollisions: 33194; Collisions: 33457; Duplicates: 0
+---Time used: 38s        
+---Memory used: 4096MB
+----------------------
+File 24:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389067; Firstcollisions: 32897; Collisions: 33149; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 25:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390068; Firstcollisions: 32894; Collisions: 33152; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 26:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385580; Firstcollisions: 32493; Collisions: 32758; Duplicates: 0
+---Time used: 36s        
+---Memory used: 4096MB
+----------------------
+File 27:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392453; Firstcollisions: 32784; Collisions: 33064; Duplicates: 0
+---Time used: 44s        
+---Memory used: 4096MB
+----------------------
+File 28:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387244; Firstcollisions: 32779; Collisions: 33046; Duplicates: 0
+---Time used: 39s        
+---Memory used: 4096MB
+----------------------
+File 29:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386002; Firstcollisions: 32685; Collisions: 32946; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+File 30:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386174; Firstcollisions: 32829; Collisions: 33089; Duplicates: 0
+---Time used: 45s        
+---Memory used: 4096MB
+----------------------
+File 31:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388645; Firstcollisions: 32800; Collisions: 33054; Duplicates: 0
+---Time used: 48s        
+---Memory used: 4096MB
+----------------------
+File 32:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391322; Firstcollisions: 32807; Collisions: 33053; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 33:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385784; Firstcollisions: 32420; Collisions: 32671; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 34:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388466; Firstcollisions: 32747; Collisions: 33011; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 35:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385279; Firstcollisions: 32737; Collisions: 33007; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+File 36:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387580; Firstcollisions: 33031; Collisions: 33295; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 37:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391471; Firstcollisions: 33055; Collisions: 33308; Duplicates: 0
+---Time used: 55s        
+---Memory used: 4096MB
+----------------------
+File 38:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391140; Firstcollisions: 32902; Collisions: 33144; Duplicates: 0
+---Time used: 43s        
+---Memory used: 4096MB
+----------------------
+File 39:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389547; Firstcollisions: 32846; Collisions: 33110; Duplicates: 0
+---Time used: 36s        
+---Memory used: 4096MB
+----------------------
+File 40:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385003; Firstcollisions: 32802; Collisions: 33080; Duplicates: 0
+---Time used: 59s        
+---Memory used: 4096MB
+----------------------
+File 41:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8381007; Firstcollisions: 32594; Collisions: 32839; Duplicates: 0
+---Time used: 35s        
+---Memory used: 4096MB
+----------------------
+File 42:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390038; Firstcollisions: 32973; Collisions: 33227; Duplicates: 0
+---Time used: 57s        
+---Memory used: 4096MB
+----------------------
+File 43:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389324; Firstcollisions: 32681; Collisions: 32926; Duplicates: 0
+---Time used: 45s        
+---Memory used: 4096MB
+----------------------
+File 44:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387599; Firstcollisions: 32769; Collisions: 33011; Duplicates: 0
+---Time used: 32s        
+---Memory used: 4096MB
+----------------------
+File 45:
+Duplicates: 27132 21267 21465 10860 21870 14520 12600 5340 21330 16650 13860 7020 12690 8370 5820 2505 20835 16080 16380 8310 13680 9120 7905 3340 11940 9240 7680 3900 5640 3740 2640 1119 21141 16230 16440 8340 16830 11130 9600 4160 13980 10860 9120 4620 8280 5460 3820 1650 10440 8070 8220 4170 6840 4560 3960 1670 4980 3940 3200 1620 2415 1605 1114 462 
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388171; Firstcollisions: 32639; Collisions: 32892; Duplicates: 1
+---Time used: 32s        
+---Memory used: 4096MB
+----------------------
+File 46:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386891; Firstcollisions: 32849; Collisions: 33126; Duplicates: 0
+---Time used: 35s        
+---Memory used: 4096MB
+----------------------
+File 47:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384896; Firstcollisions: 32810; Collisions: 33049; Duplicates: 0
+---Time used: 38s        
+---Memory used: 4096MB
+----------------------
+File 48:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386146; Firstcollisions: 32462; Collisions: 32723; Duplicates: 0
+---Time used: 35s        
+---Memory used: 4096MB
+----------------------
+File 49:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387828; Firstcollisions: 32876; Collisions: 33157; Duplicates: 0
+---Time used: 49s        
+---Memory used: 4096MB
+----------------------
+File 50:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384314; Firstcollisions: 32754; Collisions: 32995; Duplicates: 0
+---Time used: 53s        
+---Memory used: 4096MB
+----------------------
+File 51:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385208; Firstcollisions: 32496; Collisions: 32735; Duplicates: 0
+---Time used: 50s        
+---Memory used: 4096MB
+----------------------
+File 52:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388290; Firstcollisions: 32848; Collisions: 33112; Duplicates: 0
+---Time used: 50s        
+---Memory used: 4096MB
+----------------------
+File 53:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8383974; Firstcollisions: 32811; Collisions: 33043; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 54:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390819; Firstcollisions: 32825; Collisions: 33059; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 55:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8394116; Firstcollisions: 32643; Collisions: 32895; Duplicates: 0
+---Time used: 43s        
+---Memory used: 4096MB
+----------------------
+File 56:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8381291; Firstcollisions: 32901; Collisions: 33155; Duplicates: 0
+---Time used: 53s        
+---Memory used: 4096MB
+----------------------
+File 57:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392133; Firstcollisions: 32980; Collisions: 33233; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+File 58:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8380353; Firstcollisions: 32790; Collisions: 33040; Duplicates: 0
+---Time used: 38s        
+---Memory used: 4096MB
+----------------------
+File 59:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8395282; Firstcollisions: 32860; Collisions: 33109; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 60:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390232; Firstcollisions: 32872; Collisions: 33150; Duplicates: 0
+---Time used: 40s        
+---Memory used: 4096MB
+----------------------
+File 61:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387437; Firstcollisions: 32669; Collisions: 32915; Duplicates: 0
+---Time used: 51s        
+---Memory used: 4096MB
+----------------------
+File 62:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390319; Firstcollisions: 32933; Collisions: 33211; Duplicates: 0
+---Time used: 45s        
+---Memory used: 4096MB
+----------------------
+File 63:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388403; Firstcollisions: 32504; Collisions: 32769; Duplicates: 0
+---Time used: 36s        
+---Memory used: 4096MB
+----------------------
+File 64:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392093; Firstcollisions: 32773; Collisions: 33059; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 65:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389622; Firstcollisions: 32836; Collisions: 33058; Duplicates: 0
+---Time used: 39s        
+---Memory used: 4096MB
+----------------------
+File 66:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387115; Firstcollisions: 32704; Collisions: 32946; Duplicates: 0
+---Time used: 44s        
+---Memory used: 4096MB
+----------------------
+File 67:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388964; Firstcollisions: 32896; Collisions: 33142; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 68:
+Duplicates: 462 1119 1650 2505 1670 3340 4160 5340 1620 3900 4620 7020 4170 8310 8340 10860 1605 3740 5460 8370 4560 9120 11130 14520 3940 9240 10860 16650 8070 16080 16230 21267 1114 2640 3820 5820 3960 7905 9600 12600 3200 7680 9120 13860 8220 16380 16440 21465 2415 5640 8280 12690 6840 13680 16830 21870 4980 11940 13980 21330 10440 20835 21141 27132 
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390765; Firstcollisions: 32695; Collisions: 32958; Duplicates: 1
+---Time used: 40s        
+---Memory used: 4096MB
+----------------------
+File 69:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384548; Firstcollisions: 32744; Collisions: 32967; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 70:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387931; Firstcollisions: 32893; Collisions: 33125; Duplicates: 0
+---Time used: 43s        
+---Memory used: 4096MB
+----------------------
+File 71:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389316; Firstcollisions: 32999; Collisions: 33262; Duplicates: 0
+---Time used: 33s        
+---Memory used: 4096MB
+----------------------
+File 72:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388698; Firstcollisions: 32700; Collisions: 32954; Duplicates: 0
+---Time used: 39s        
+---Memory used: 4096MB
+----------------------
+File 73:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388575; Firstcollisions: 32697; Collisions: 32929; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 74:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386491; Firstcollisions: 33250; Collisions: 33520; Duplicates: 0
+---Time used: 31s        
+---Memory used: 4096MB
+----------------------
+File 75:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390497; Firstcollisions: 32888; Collisions: 33142; Duplicates: 0
+---Time used: 36s        
+---Memory used: 4096MB
+----------------------
+File 76:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387611; Firstcollisions: 32980; Collisions: 33252; Duplicates: 0
+---Time used:  1m, 0s    
+---Memory used: 4096MB
+----------------------
+File 77:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389364; Firstcollisions: 32574; Collisions: 32841; Duplicates: 0
+---Time used:  1m,43s    
+---Memory used: 4096MB
+----------------------
+File 78:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386494; Firstcollisions: 32733; Collisions: 32982; Duplicates: 0
+---Time used:  2m, 8s    
+---Memory used: 4096MB
+----------------------
+File 79:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387625; Firstcollisions: 32821; Collisions: 33075; Duplicates: 0
+---Time used:  1m,47s    
+---Memory used: 4096MB
+----------------------
+File 80:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384961; Firstcollisions: 32527; Collisions: 32752; Duplicates: 0
+---Time used: 49s        
+---Memory used: 4096MB
+----------------------
+File 81:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391421; Firstcollisions: 32646; Collisions: 32929; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 82:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8393347; Firstcollisions: 32817; Collisions: 33117; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+File 83:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384635; Firstcollisions: 32473; Collisions: 32715; Duplicates: 0
+---Time used: 38s        
+---Memory used: 4096MB
+----------------------
+File 84:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384879; Firstcollisions: 32691; Collisions: 32953; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 85:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8393432; Firstcollisions: 32615; Collisions: 32861; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 86:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392296; Firstcollisions: 32949; Collisions: 33212; Duplicates: 0
+---Time used: 35s        
+---Memory used: 4096MB
+----------------------
+File 87:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391078; Firstcollisions: 32614; Collisions: 32869; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 88:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388708; Firstcollisions: 32838; Collisions: 33095; Duplicates: 0
+---Time used: 36s        
+---Memory used: 4096MB
+----------------------
+File 89:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8395198; Firstcollisions: 32865; Collisions: 33101; Duplicates: 0
+---Time used: 33s        
+---Memory used: 4096MB
+----------------------
+File 90:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388461; Firstcollisions: 32713; Collisions: 32986; Duplicates: 0
+---Time used: 35s        
+---Memory used: 4096MB
+----------------------
+File 91:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391495; Firstcollisions: 32832; Collisions: 33116; Duplicates: 0
+---Time used: 35s        
+---Memory used: 4096MB
+----------------------
+File 92:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8393452; Firstcollisions: 32911; Collisions: 33164; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 93:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392382; Firstcollisions: 32770; Collisions: 33035; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 94:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386418; Firstcollisions: 32638; Collisions: 32910; Duplicates: 0
+---Time used: 33s        
+---Memory used: 4096MB
+----------------------
+File 95:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391210; Firstcollisions: 32934; Collisions: 33183; Duplicates: 0
+---Time used: 30s        
+---Memory used: 4096MB
+----------------------
+File 96:
+Duplicates: 27132 21141 20835 10440 21330 13980 11940 4980 21870 16830 13680 6840 12690 8280 5640 2415 21465 16440 16380 8220 13860 9120 7680 3200 12600 9600 7905 3960 5820 3820 2640 1114 21267 16230 16080 8070 16650 10860 9240 3940 14520 11130 9120 4560 8370 5460 3740 1605 10860 8340 8310 4170 7020 4620 3900 1620 5340 4160 3340 1670 2505 1650 1119 462 
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390493; Firstcollisions: 32832; Collisions: 33111; Duplicates: 1
+---Time used: 29s        
+---Memory used: 4096MB
+----------------------
+File 97:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389057; Firstcollisions: 32533; Collisions: 32813; Duplicates: 0
+---Time used: 31s        
+---Memory used: 4096MB
+----------------------
+File 98:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390649; Firstcollisions: 32549; Collisions: 32805; Duplicates: 0
+---Time used: 32s        
+---Memory used: 4096MB
+----------------------
+File 99:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388876; Firstcollisions: 32290; Collisions: 32562; Duplicates: 0
+---Time used: 31s        
+---Memory used: 4096MB
+----------------------
+File 100:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385656; Firstcollisions: 32818; Collisions: 33073; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 101:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389072; Firstcollisions: 32610; Collisions: 32863; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 102:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389696; Firstcollisions: 32543; Collisions: 32790; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 103:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391679; Firstcollisions: 32732; Collisions: 32984; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 104:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387284; Firstcollisions: 32709; Collisions: 32976; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+File 105:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386127; Firstcollisions: 32591; Collisions: 32846; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+File 106:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384711; Firstcollisions: 32601; Collisions: 32841; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 107:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386394; Firstcollisions: 32534; Collisions: 32811; Duplicates: 0
+---Time used: 34s        
+---Memory used: 4096MB
+----------------------
+File 108:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8384822; Firstcollisions: 32911; Collisions: 33173; Duplicates: 0
+---Time used: 39s        
+---Memory used: 4096MB
+----------------------
+File 109:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387213; Firstcollisions: 32597; Collisions: 32862; Duplicates: 0
+---Time used: 38s        
+---Memory used: 4096MB
+----------------------
+File 110:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392877; Firstcollisions: 32936; Collisions: 33192; Duplicates: 0
+---Time used: 36s        
+---Memory used: 4096MB
+----------------------
+File 111:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389718; Firstcollisions: 32617; Collisions: 32864; Duplicates: 0
+---Time used: 49s        
+---Memory used: 4096MB
+----------------------
+File 112:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391340; Firstcollisions: 33045; Collisions: 33301; Duplicates: 0
+---Time used:  5m, 3s    
+---Memory used: 4096MB
+----------------------
+File 113:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8385321; Firstcollisions: 32642; Collisions: 32923; Duplicates: 0
+---Time used: 51s        
+---Memory used: 4096MB
+----------------------
+File 114:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388005; Firstcollisions: 32935; Collisions: 33179; Duplicates: 0
+---Time used: 47s        
+---Memory used: 4096MB
+----------------------
+File 115:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391302; Firstcollisions: 32840; Collisions: 33063; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 116:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386832; Firstcollisions: 32933; Collisions: 33184; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 117:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390261; Firstcollisions: 32445; Collisions: 32653; Duplicates: 0
+---Time used: 37s        
+---Memory used: 4096MB
+----------------------
+File 118:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388349; Firstcollisions: 32636; Collisions: 32889; Duplicates: 0
+---Time used: 55s        
+---Memory used: 4096MB
+----------------------
+File 119:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8387421; Firstcollisions: 32558; Collisions: 32816; Duplicates: 0
+---Time used: 54s        
+---Memory used: 4096MB
+----------------------
+File 120:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8383604; Firstcollisions: 32851; Collisions: 33106; Duplicates: 0
+---Time used: 49s        
+---Memory used: 4096MB
+----------------------
+File 121:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8386336; Firstcollisions: 32910; Collisions: 33150; Duplicates: 0
+---Time used: 44s        
+---Memory used: 4096MB
+----------------------
+File 122:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8392488; Firstcollisions: 33152; Collisions: 33389; Duplicates: 0
+---Time used: 50s        
+---Memory used: 4096MB
+----------------------
+File 123:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8390705; Firstcollisions: 32852; Collisions: 33132; Duplicates: 0
+---Time used: 42s        
+---Memory used: 4096MB
+----------------------
+File 124:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8391485; Firstcollisions: 32634; Collisions: 32904; Duplicates: 0
+---Time used: 46s        
+---Memory used: 4096MB
+----------------------
+File 125:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389095; Firstcollisions: 32841; Collisions: 33090; Duplicates: 0
+---Time used: 50s        
+---Memory used: 4096MB
+----------------------
+File 126:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8389305; Firstcollisions: 32692; Collisions: 32979; Duplicates: 0
+---Time used: 50s        
+---Memory used: 4096MB
+----------------------
+File 127:
+----------------------
+---HASH TABLE REPORT:
+---Hash table size: 1073741824; Array size: 8388209; Firstcollisions: 32922; Collisions: 33208; Duplicates: 0
+---Time used: 41s        
+---Memory used: 4096MB
+----------------------
+Total time for checking duplicates13h,50m,42s
