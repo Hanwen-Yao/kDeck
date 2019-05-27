@@ -28,9 +28,6 @@ int substringOccurrence (uchar *A, int n, uchar *B, int k);
 void extKdeck (int *arr_old, int *arr_new, int **M, int n, int k, int bit);
 void calDiv (int k, int n);
 
-// temporary function
-void calDiv_temp (int k, int n);
-
 void printDecktoFile(FILE *fptr, int *deck, int len);
 void readDeckfromFile(FILE *fptr, int *deck, int len);
 void calDeckListList(int **L_old, int **L_new, int num_old, int **M, int n, int k);

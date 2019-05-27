@@ -174,8 +174,8 @@ int substringOccurrence (uchar *A, int n, uchar *B, int k)
 			if (indice[i] < (n - 1) - (k - 1) + i)
 			{
 				j = i;
-				flag = 1;
-				break;
+			flag = 1;
+			break;
 			}
 		}
 
@@ -221,63 +221,6 @@ void extKdeck (int *arr_old, int *arr_new, int **M, int n, int k, int bit)
 }
 
 // Calculate the divergence number of k-deck
-void calDiv_temp (int k, int n)
-{
-	int filecnt_old[128] = {4194561,4195715,4191955,4195790,4194999,4194943,4191879,
-		4198411,4195880,4198314,4193539,4194466,4195425,4192449,4197746,4196359,
-		4192660,4196408,4197060,4192867,4195395,4191534,4192325,4194195,4195164,
-		4195118,4190119,4193371,4191994,4194001,4194030,4194035,4195013,4194448,
-		4195366,4194696,4196197,4195023,4193363,4194070,4198265,4196153,4196221,
-		4194833,4194120,4193316,4195113,4194721,4189606,4195580,4195908,4190260,
-		4191322,4193874,4193314,4194228,4190969,4192715,4194759,4194007,4197514,
-		4193245,4193958,4194662,4192812,4194699,4193433,4194625,4194896,4193035,
-		4195035,4193113,4193251,4191862,4194870,4195552,4198318,4194983,4196926,
-		4195462,4194346,4195838,4191661,4196046,4193754,4193049,4191320,4195248,
-		4195097,4193886,4195208,4191951,4193186,4193460,4191466,4196398,4193078,
-		4192810,4192985,4194711,4193578,4193390,4192893,4200483,4195937,4193971,
-		4194160,4191397,4194892,4195945,4192358,4197787,4192610,4194437,4195367,
-		4191618,4194635,4197471,4191725,4193824,4195876,4193225,4197344,4191927,
-		4193219,4192681,4194262,4195984};
-
-	int len = (1 << k);			// Length of k-deck
-
-	// Calculate transition matrix
-	int **M = initTransitionMatrix (k, k-1);
-
-	// Print the title
-	printf("--------------------------------------------------\n");
-	printf("                    %d-DECK, 29-30                \n",k);
-	printf("--------------------------------------------------\n");
-
-	// Record time
-	printf("n = %d\n", 30);
-	time_t start = time(0);
-
-	// Initialize
-	int file_number = 128;
-	int *filecnt_new = (int *) malloc (file_number * sizeof(int));
-	printf("file_number = %d\n", file_number);
-
-	calDeckFileFile(file_number, file_number, filecnt_old, filecnt_new, M, 29, k);
-
-	// Print
-	printf("K-Deck Calculation Time (to files): "); printTime(start,time(0)); printf("\n");
-	printf("Number of k-decks in each file:");
-	for (int j = 0; j < file_number; j++)
-		printf("%d,", filecnt_new[j]);
-	printf("\n");
-
-	// Check duplicates in each file
-	start = time(0);
-	checkDuplicatesinFiles (file_number, filecnt_new, 30, len);
-	printf("Total time for checking duplicates"); printTime(start,time(0)); printf("\n");
-
-	// Free the space
-	free(filecnt_new);
-	freeTransitionMatrix (M, k-1);
-}
-
-// Calculate the divergence number of k-deck
 void calDiv (int k, int n)
 {
 	if (k > n || k <= 1)
@@ -299,8 +242,7 @@ void calDiv (int k, int n)
 	// Initialize 2^k strings
 	int len = (1 << k);			// Length of k-deck
 	int num = (1 << k);			// Number of different k-decks
-	// int NUM = (1 << 22);			// the ave number of k-decks in a file
-	int NUM = (1 << 6);			// the ave number of k-decks in a file
+	int NUM = (1 << 22);		// the ave number of k-decks in a file
 	int **L = (int **) malloc (len * sizeof(int *));
 	uchar L_isfreed = 0;
 	for (int i = 0; i < len; i++)
@@ -319,7 +261,7 @@ void calDiv (int k, int n)
 	printf("--------------------------------------------------\n");
 
 	// Main Loop
-	for (int i = 29; i < n; i++)
+	for (int i = k; i < n; i++)
 	{
 		// Record time
 		printf("n = %d\n", i+1);
