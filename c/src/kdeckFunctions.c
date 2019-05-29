@@ -229,28 +229,22 @@ void calDiv (int k, int n)
 		printf("calDiv, require 1 < k <= n.\n");
 	}
 
-	// Create a folder
-	int status = mkdir("KDECK_PROCESS",0777);
-	if (status)
-	{
-		printf("Warning: in kdeckFunctions.c");
-		printf("error creating folder 'KDECK_PROCESS'\n");
-	}
-	int *filecnt_new;		// count the # of k-decks in each file
-	int *filecnt_old;
-
-	// Initialize 2^k strings
+	// Initialization
 	int len = (1 << k);			// Length of k-deck
 	int num = (1 << k);			// Number of different k-decks
-	int NUM = (1 << 22);		// the ave number of k-decks in a file
+	int NUM = (1 << 24);
 	int **L = (int **) malloc (len * sizeof(int *));
-	uchar L_isfreed = 0;
 	for (int i = 0; i < len; i++)
 	{
 		L[i] = (int *) malloc (len * sizeof(int));
 		for (int j = 0; j < len ; j++)
 			L[i][j] = (i == j)?1:0;
 	}
+
+	// Indicator
+	int tofile = 1;				// Indicate list to file
+	int filenum, filenum_new;
+	int *filecnt, *filecnt_new;
 
 	// Calculate transition matrix
 	int **M = initTransitionMatrix (k, k-1);
@@ -259,183 +253,320 @@ void calDiv (int k, int n)
 	printf("--------------------------------------------------\n");
 	printf("                    %d-DECK                       \n",k);
 	printf("--------------------------------------------------\n");
+	time_t START = time(0);
 
 	// Main Loop
 	for (int i = k; i < n; i++)
 	{
 		// Record time
-		printf("n = %d\n", i+1);
 		time_t start = time(0);
 
+		// Calculate new list
 		if (num < NUM)
 		{
-			// Allocate space for new list
 			int **L_new = (int **) malloc (2 * num * sizeof(int *));
-			for (int j = 0; j < 2 * num; j++)
-				L_new[j] = (int *) malloc (len * sizeof(int));
-
-			// Calculate new list
-			calDeckListList(L, L_new, num, M, i, k);
-
-			// Free the old array
-			for (int i = 0; i < num; i++)
-				free(L[i]);
-			free(L);
-	
-			// Update
+			calDeckListList(L, L_new, &num, M, i, k);
 			L = L_new;
-			num *= 2;
-	
-			// Check duplicates
-			printf("K-Deck Calculation Time: ");
-			printTime(start,time(0));
-			printf("\n");
-			checkDuplicates(L, num, len);
 		}
 		else
 		{
-			// Initialize
-			int file_number = 2*num/NUM;
-			filecnt_new = (int *) malloc (file_number * sizeof(int));
-			printf("file_number = %d\n", file_number);
-
-			if (file_number == 2)
+			printf("To file...\n");
+			if (tofile)
 			{
-				calDeckListFile(L, num, file_number, filecnt_new, M, i, k);
-
-				// Free L
-				for (int i = 0; i < num; i++)
-					free(L[i]);
-				free(L);
-				L_isfreed = 1;
-
+				filenum = (num * 2) / NUM + 1;
+				filecnt = (int *) malloc (filenum * sizeof(int));
+				printf("filenum = %d\n", filenum);
+				calDeckListFile(L, &num, filenum, filecnt, M, i, k);
+				tofile = 0;
 			}
 			else
 			{
-				calDeckFileFile(file_number/2, file_number, filecnt_old, filecnt_new, M, i, k);
+				filenum_new = (num * 2) / NUM + 1;
+				filecnt_new = (int *) malloc (filenum_new * sizeof(int));
+				printf("filenum = %d\n", filenum_new);
+				calDeckFileFile(filenum, filecnt, filenum_new, filecnt_new, &num, M, i, k);
 
-				// Free the space
-				free(filecnt_old);
+				free(filecnt);
+				filecnt = filecnt_new;
+				filenum = filenum_new;
 			}
-
-			// Print
-			printf("K-Deck Calculation Time (to files): "); printTime(start,time(0)); printf("\n");
-			printf("Number of k-decks in each file:");
-			for (int j = 0; j < file_number; j++)
-				printf("%d ", filecnt_new[j]);
-			printf("\n");
-
-			// Check duplicates in each file
-			start = time(0);
-			checkDuplicatesinFiles (file_number, filecnt_new, i+1, len);
-			printf("Total time for checking duplicates"); printTime(start,time(0)); printf("\n");
-
-			// Update
-			num *= 2;
-			filecnt_old = filecnt_new;
-			if (i == n-1)
-				free(filecnt_new);
 		}
-	}
 
-	// Free the new array
-	if (L_isfreed == 0)
+		// Print the result
+		printf("Total time: ");
+		printTime(start,time(0)); printf(": ");
+		printf("D[%d,%d] = %d\n", k, i+1, num);
+	}
+	printf("TOTAL TIME: ");
+	printTime(START,time(0)); printf("\n");
+
+	// Free the space
+	if (tofile)
 	{
 		for (int i = 0; i < num; i++)
 			free(L[i]);
 		free(L);
 	}
+	else
+		free(filecnt);
 
-	// Free transition matrix
+	// Free the transition matrix
 	freeTransitionMatrix (M, k-1);
 }
 
-// Print the k-deck from deck to fptr
-void printDecktoFile(FILE *fptr, int *deck, int len)
-{
-	for (int i = 0; i < len; i++)
-		fprintf (fptr, "%d ", deck[i]);
-	fprintf(fptr, "\n");
-}
+/* ------------------------------------------------------------------------ */
+/*						Hash Functions										*/
+/* ------------------------------------------------------------------------ */
 
-// Read the k-deck from fprt to deck
-void readDeckfromFile(FILE *fptr, int *deck, int len)
+// from one-at-a-time hash from
+// http://www.burtleburtle.net/bob/hash/doobs.html
+uint hashKey (int *array, int len)
 {
+	uint hash = 0;
 	for (int i = 0; i < len; i++)
-		fscanf (fptr, "%d", deck+i);
-}
-
-// Calculate the new k-deck from list L of length n to new list
-// Assume L_new has 2 * num_old spaces
-// Need to pre-allocate space for L_old and L_new
-void calDeckListList(int **L_old, int **L_new, int num_old, int **M, int n, int k)
-{
-	for (int i = 0; i < num_old; i++)
 	{
-		extKdeck (L_old[i], L_new[i], M, n, k, 0);				// Extend a 0
-		extKdeck (L_old[i], L_new[i + num_old], M, n, k, 1);	// Extend a 1
+		hash += array[i];
+    	hash += (hash << 10);
+    	hash ^= (hash >> 6);
 	}
+  	hash += (hash << 3);
+  	hash ^= (hash >> 11);
+  	hash += (hash << 15);
+
+	return hash;
 }
+
+// from one-at-a-time hash from
+// http://www.burtleburtle.net/bob/hash/doobs.html
+uint hashKey2 (int *array, int len)
+{
+	uint hash = 0;
+	for (int i = len - 1; i >= 0; i--)
+	{
+		hash += array[i];
+    	hash += (hash << 10);
+    	hash ^= (hash >> 6);
+	}
+  	hash += (hash << 3);
+  	hash ^= (hash >> 11);
+  	hash += (hash << 15);
+
+	return hash;
+}
+
+int stringIsSame(int *array1, int *array2, int len)
+{
+	for (int i = 0; i < len; i++)
+		if (array1[i] != array2[i])
+			return 0;
+	return 1;
+}
+
+// Use a hash table for calculating new k-decks
+// L_old has length n
+void calDeckListList(int **L_old, int **L_new, int *num, int **M, int n, int k)
+{
+	// Set global parameter for hash tables
+	uint HASHSIZE;
+	int hash_print = 0;
+	if ((1 << 30) * 0.01 < (*num))
+	{
+		HASHSIZE = (1 << 30);  // 32 * 4 = 128 MB
+		hash_print = 1;
+	}
+	else
+	{
+		HASHSIZE = 1;
+		while (HASHSIZE < (*num) * 100)
+			HASHSIZE <<= 1;
+	}
+	uint HASHMASK = HASHSIZE - 1;
+
+	// Record the time
+	time_t start = time(0);
+
+	// Initialize hash table
+	int *hashTable = (int *) malloc (HASHSIZE * sizeof(int));
+	for (int i = 0; i < HASHSIZE; i++)
+		hashTable[i] = -1;
+
+	// Hashing
+	int duplicates = 0;
+	int collisions = 0;
+	int firstcollisions = 0;
+	int flag = 0;
+	int rep = 0;
+
+	// Initialize a temp k-deck
+	int len = (1 << k);
+	int *kdeck = (int *) malloc (len * sizeof(int));
+	int j = 0;
+
+	for (int i = 0; i < *num; i++)
+	{
+		for (int b = 0; b < 2; b++)
+		{
+			// Calculate new k-deck
+			extKdeck ( L_old[i], kdeck, M, n, k, b);
+	
+			// Hashing
+			uint key = hashKey (kdeck, len) & HASHMASK;
+			flag = 0;
+			rep = 0;
+	
+			while(1)
+			{
+				if (hashTable[key] == -1)		// slot is available
+				{
+					hashTable[key] = j;			// means the number appears first time
+					break;
+				}
+				else
+				{
+					if (stringIsSame (L_new[hashTable[key]], kdeck, len))
+					{
+						duplicates ++;				// Duplicates
+						rep = 1;
+						break;
+					}
+					else
+					{
+						collisions ++;
+						firstcollisions += (flag)?0:1;
+						key = (key + 1) & HASHMASK;
+						flag = 1;
+					}
+				}
+			}
+	
+			// Add kdeck into L_new
+			if (rep == 0)
+			{
+				L_new[j] = (int *) malloc (len * sizeof(int));
+				for (int t = 0; t < len; t++)
+					L_new[j][t] = kdeck[t];
+				j++;
+			}
+		}
+		
+		// Free the space
+		free(L_old[i]);
+	}
+
+	// Print the hashtable report
+	if (hash_print)
+	{
+		printf("----------------------\n");
+		printf("---HASH TABLE REPORT:\n");
+		printf("---Hash table size: %d; Array size: %d; ", HASHSIZE, *num * 2);
+		printf("Firstcollisions: %d; Collisions: %d; Duplicates: %d\n", firstcollisions, collisions, duplicates);
+		printf("---Time used: "); printTime(start,time(0)); printf("\n");
+		if ((HASHSIZE >> 20)*4 < 1)
+			printf("---Memory used: <1MB\n");
+		else
+			printf("---Memory used: %dMB\n", (HASHSIZE >> 20)*4);
+		printf("----------------------\n");
+	}
+
+	// Free the space and update
+	free(hashTable);
+	free(L_old);
+	*num = j;
+
+	return;
+}
+
+/* ------------------------------------------------------------------------ */
+/*							To File											*/
+/* ------------------------------------------------------------------------ */
 
 // Calculate the new k-deck from list L of length n to files
-// file_count count is a list of integers of length file_number
+// filecnt is a list of integers of length file_number
 // it counts the number of k-decks in each file
-void calDeckListFile(int **L, int num, int file_number, int *file_count, int **M, int n, int k)
+void calDeckListFile(int **L, int *num, int filenum, int *filecnt, int **M, int n, int k)
 {
+	time_t start = time(0);
+
 	// Calculate length of k-deck
 	int len = (1 << k);
 
 	// Allocate space
-	FILE **file_array = (FILE **) malloc (file_number * sizeof (FILE*));
+	FILE **file_array = (FILE **) malloc (filenum * sizeof (FILE*));
 	char filename[100];
 
 	// Make a new directory
+	sprintf(filename, "KDECK_PROCESS");
+	mkdir(filename, 0777);
 	sprintf(filename, "KDECK_PROCESS/%d", n+1);
 	mkdir(filename, 0777);
 
 	// Open files
-	for (int t = 0; t < file_number; t++)
+	for (int t = 0; t < filenum; t++)
 	{
-		sprintf(filename, "KDECK_PROCESS/%d/%d.txt", n+1, t);
+		sprintf(filename, "KDECK_PROCESS/%d/%d", n+1, t);
 		file_array[t] = fopen(filename, "w");
 	}
 
-	// Initialize file_count
-	for (int i = 0; i < file_number; i++)
-		file_count[i] = 0;
+	// Initialize filecnt 
+	for (int i = 0; i < filenum; i++)
+		filecnt[i] = 0;
 
 	// Distribute k-decks
-	int *deck = (int *) malloc (len * sizeof(int));
-	uint mask = file_number - 1;		// Take file_number bits
-	uint idx;
+	int *kdeck = (int *) malloc (len * sizeof(int));
+	int idx;
 
-	for (int j = 0; j < num; j++)		// From L
+	for (int j = 0; j < *num; j++)		// From L
 	{
 		for (int b = 0; b < 2; b++)
 		{
-			extKdeck(L[j], deck, M, n, k, b);
-			idx = hashKey2 (deck, len) & mask;
+			extKdeck( L[j], kdeck, M, n, k, b);
+			idx = hashKey2( kdeck, len) % filenum;
 
-			printDecktoFile(file_array[idx], deck, len);
-			file_count[idx] += 1;
+			printDecktoFile(file_array[idx], kdeck, len);
+			filecnt[idx] += 1;
 		}
+		free(L[j]);
 	}
+	free(L);
+	
+	printf("Filecnt: ");
+	for (int t = 0; t < filenum; t++)
+		printf("%d ", filecnt[t]);
+	printf("\nTime used for calculating to files: "); 
+	printTime(start, time(0)); printf("\n");
 
-	// Free the space
-	for (int t = 0; t < file_number; t++)
+	// Close the files
+	for (int t = 0; t < filenum; t++)
 		fclose(file_array[t]);
 	free(file_array); 
-	free(deck);
+
+	// Remove duplicates and update sum
+	printf("Remove duplicates...\n");
+	start = time(0);
+	*num = 0;
+	for (int t = 0; t < filenum; t++)
+	{
+		time_t s = time(0);
+		removeDuplicateFile(t, filecnt + t, n+1, k);
+		*num += filecnt[t];
+		printf("file %d, time: ", t); printTime(s,time(0)); printf("\n");
+	}
+	printf("Total time for removing duplicates: "); 
+	printTime(start,time(0)); printf("\n");
+
+	// Free the space
+	free(kdeck);
 }
 
 // Calculate the new k-deck of length n from files to files
-// file_count count is a list of integers of length file_number
+// filecnt is a list of integers of length file_number
 // it counts the number of k-decks in each file
-void calDeckFileFile(int filenum_old, int filenum_new, 
-		int *filecnt_old, int *filecnt_new, int **M, int n, int k)
+void calDeckFileFile(int filenum, int *filecnt, int filenum_new, int *filecnt_new, 
+		int *num, int **M, int n, int k)
 {
 	// Calculate length of k-deck
 	int len = (1 << k);
+	time_t start = time(0);
 
 	// Allocate space
 	FILE **file_array = (FILE **) malloc (filenum_new * sizeof (FILE*));
@@ -448,7 +579,7 @@ void calDeckFileFile(int filenum_old, int filenum_new,
 	// Open files
 	for (int t = 0; t < filenum_new; t++)
 	{
-		sprintf(filename, "KDECK_PROCESS/%d/%d.txt", n+1, t);
+		sprintf(filename, "KDECK_PROCESS/%d/%d", n+1, t);
 		file_array[t] = fopen(filename, "w");
 	}
 
@@ -457,76 +588,199 @@ void calDeckFileFile(int filenum_old, int filenum_new,
 		filecnt_new[i] = 0;
 
 	// Distribute k-decks
-	int *deck_old = (int *) malloc (len * sizeof(int));
-	int *deck_new = (int *) malloc (len * sizeof(int));
-	uint mask = filenum_new - 1;		// Take file_number bits
-	uint idx;
+	int *kdeck = (int *) malloc (len * sizeof(int));
+	int *kdeck_new = (int *) malloc (len * sizeof(int));
+	int idx;
 
-
-	for (int f = 0; f < filenum_old; f++)
+	for (int f = 0; f < filenum; f++)
 	{
-		// Record time
-		printf("From file %d: %d; time:", f, filecnt_old[f]);
-		time_t start = time(0);
-
-		sprintf(filename, "KDECK_PROCESS/%d/%d.txt", n, f);
+		sprintf(filename, "KDECK_PROCESS/%d/%d", n, f);
 		FILE *fptr = fopen(filename, "r");
 
-		for (int j = 0; j < filecnt_old[f]; j++)		// From file
+		for (int j = 0; j < filecnt[f]; j++)		// From file
 		{
 			// Read the k-deck
-			readDeckfromFile(fptr, deck_old, len);
+			readDeckfromFile(fptr, kdeck, len);
 
 			// Calculate new k-deck
 			for (int b = 0; b < 2; b++)
 			{
-				extKdeck(deck_old, deck_new, M, n, k, b);
-				idx = hashKey2(deck_new, len) & mask;
+				extKdeck(kdeck, kdeck_new, M, n, k, b);
+				idx = hashKey2(kdeck_new, len) % filenum_new;
 	
-				printDecktoFile(file_array[idx], deck_new, len);
+				printDecktoFile(file_array[idx], kdeck_new, len);
 				filecnt_new[idx] += 1;
 			}
 		}
 
 		fclose(fptr);
-		printTime(start,time(0)); printf("\n");
 		remove(filename);
 	}
+	// Delete folder
+	sprintf(filename, "KDECK_PROCESS/%d", n);
+	remove(filename);
 
-	// Free the space
+	// Close the file
 	for (int t = 0; t < filenum_new; t++)
 		fclose(file_array[t]);
 	free(file_array); 
-	free(deck_old);
-	free(deck_new);
+
+	printf("Filecnt: ");
+	for (int t = 0; t < filenum_new; t++)
+		printf("%d ", filecnt_new[t]);
+	printf("\nTime used for calculating to files: "); 
+	printTime(start, time(0)); printf("\n");
+
+	// Remove duplicates and update sum
+	*num = 0;
+	printf("Remove duplicates...\n");
+	start = time(0);
+	for (int t = 0; t < filenum_new; t++)
+	{
+		time_t s = time(0);
+		removeDuplicateFile(t, filecnt_new + t, n+1, k);
+		*num += filecnt_new[t];
+		printf("file %d, time: ", t); printTime(s,time(0)); printf("\n");
+	}
+	printf("Total time for removing duplicates: "); 
+	printTime(start,time(0)); printf("\n");
+
+	// Free the space
+	free(kdeck);
+	free(kdeck_new);
 }
 
-void checkDuplicatesinFiles (int filenum, int *filecnt, int n, int len)
+
+// Remove k-deck duplicates in a file using hash table
+void removeDuplicateFile(int t, int *cnt, int n, int k)
 {
-	char filename[100];
 
-	// Open files
-	for (int t = 0; t < filenum; t++)
+	// Record the time
+	time_t start = time(0);
+
+	char filename[100], filename_new[100];
+	sprintf(filename, "KDECK_PROCESS/%d/%d", n, t);
+	sprintf(filename_new, "KDECK_PROCESS/%d/%d_new", n, t);
+	FILE *fptr = fopen(filename, "r");
+	FILE *fptr_new = fopen(filename_new, "w");
+
+	int len = (1 << k);
+	int **L = (int **) malloc ((*cnt) * sizeof(int*));
+	int *kdeck = (int *) malloc (len * sizeof(int));
+	int j = 0;
+
+	// Set global parameter for hash tables
+	uint HASHSIZE;
+	int hash_print = 0;
+	if ((1 << 30) * 0.01 < (*cnt))
 	{
-		printf("File %d:\n", t);
-		sprintf(filename, "KDECK_PROCESS/%d/%d.txt", n, t);
-		FILE *fptr = fopen(filename, "r");
-
-		// Allocate space for L
-	    int **L = (int **) malloc (filecnt[t] * sizeof(int*));
-	    for (int i = 0; i < filecnt[t]; i++)
-	    {
-	        L[i] = (int *) malloc (len * sizeof(int));
-	        readDeckfromFile (fptr, L[i], len);
-	    }
-	
-	    // Check
-	    checkDuplicates( L, filecnt[t], len);
-
-	    // Free the space
-	    for (int i = 0; i < filecnt[t]; i++)
-	        free(L[i]);
-	    free(L);
-		fclose(fptr);
+		HASHSIZE = (1 << 30);  // 32 * 4 = 128 MB
+		hash_print = 1;
 	}
+	else
+	{
+		HASHSIZE = 1;
+		while (HASHSIZE < (*cnt) * 100)
+			HASHSIZE <<= 1;
+	}
+	uint HASHMASK = HASHSIZE - 1;
+
+	// Initialize hash table
+	int *hashTable = (int *) malloc (HASHSIZE * sizeof(int));
+	for (int i = 0; i < HASHSIZE; i++)
+		hashTable[i] = -1;
+
+	// Hashing
+	int duplicates = 0;
+	int collisions = 0;
+	int firstcollisions = 0;
+	int flag = 0;
+	int rep = 0;
+
+	for (int i = 0; i < *cnt; i++)
+	{
+		readDeckfromFile(fptr, kdeck, len);
+		uint key = hashKey (kdeck, len) & HASHMASK;		// Hashing
+		flag = 0;
+		rep = 0;
+
+		while(1)
+		{
+			if (hashTable[key] == -1)		// slot is available
+			{
+				hashTable[key] = j;			// means the number appears first time
+				break;
+			}
+			else
+			{
+				if (stringIsSame (L[hashTable[key]], kdeck, len))
+				{
+					duplicates ++;				// Duplicates
+					rep = 1;
+					break;
+				}
+				else
+				{
+					collisions ++;
+					firstcollisions += (flag)?0:1;
+					key = (key + 1) & HASHMASK;
+					flag = 1;
+				}
+			}
+		}
+
+		if (rep == 0)			// Add kdeck into L_new
+		{
+			L[j] = (int *) malloc (len * sizeof(int));
+			for (int t = 0; t < len; t++)
+				L[j][t] = kdeck[t];
+			printDecktoFile(fptr_new, kdeck, len);
+			j++;
+		}
+	}
+
+	// Print the hashtable report
+	if (hash_print)
+	{
+		printf("----------------------\n");
+		printf("---HASH TABLE REPORT:\n");
+		printf("---Hash table size: %d; Array size: %d; ", HASHSIZE, *cnt);
+		printf("Firstcollisions: %d; Collisions: %d; Duplicates: %d\n", firstcollisions, collisions, duplicates);
+		printf("---Time used: "); printTime(start,time(0)); printf("\n");
+		if ((HASHSIZE >> 20)*4 < 1)
+			printf("---Memory used: <1MB\n");
+		else
+			printf("---Memory used: %dMB\n", (HASHSIZE >> 20)*4);
+		printf("----------------------\n");
+	}
+
+	// Free the space and update
+	*cnt = j;
+
+	fclose(fptr);
+	fclose(fptr_new);
+	remove(filename);
+	rename(filename_new,filename);
+	
+	free(hashTable);
+	for (int i = 0; i < j; i++)
+		free(L[i]);
+	free(L);
+
+	return;
+}
+
+// Print the k-deck from deck to fptr
+void printDecktoFile(FILE *fptr, int *kdeck, int len)
+{
+	for (int i = 0; i < len; i++)
+		fprintf (fptr, "%d ", kdeck[i]);
+	fprintf(fptr, "\n");
+}
+
+// Read the k-deck from fprt to deck
+void readDeckfromFile(FILE *fptr, int *kdeck, int len)
+{
+	for (int i = 0; i < len; i++)
+		fscanf (fptr, "%d", kdeck+i);
 }
