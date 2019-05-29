@@ -11,5 +11,6 @@
 
 int main()
 {
+	calDiv(3,40);
 	return 0;
 }

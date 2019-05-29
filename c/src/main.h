@@ -16,7 +16,9 @@
 #include <sys/stat.h>	// mkdir
 
 typedef unsigned char uchar;
- typedef unsigned int uint;
+typedef unsigned int uint;
+
+/* ---------- kdeckFunctios.c ---------- */
 
 /* Transition Matrix M */
 int ** initTransitionMatrix (int k, int s);
@@ -28,19 +30,24 @@ int substringOccurrence (uchar *A, int n, uchar *B, int k);
 void extKdeck (int *arr_old, int *arr_new, int **M, int n, int k, int bit);
 void calDiv (int k, int n);
 
-void printDecktoFile(FILE *fptr, int *deck, int len);
-void readDeckfromFile(FILE *fptr, int *deck, int len);
-void calDeckListList(int **L_old, int **L_new, int num_old, int **M, int n, int k);
-void calDeckListFile(int **L, int num, int file_number, int *file_count, int **M, int n, int k);
-void calDeckFileFile(int filenum_old, int filenum_new, int *filecnt_old, int *filecnt_new, int **M, int n, int k);
-void checkDuplicatesinFiles (int filenum, int *filecnt, int n, int len);
-
-/* Hash Function */ 
-void checkDuplicates(int **L, int num, int len); 
+/* Hash Functions */ 
 uint hashKey (int *array, int len);
 uint hashKey2 (int *array, int len);
+int stringIsSame(int *array1, int *array2, int len);
+void calDeckListList(int **L_old, int **L_new, int *num, int **M, int n, int k);
 
-/* Print Time */
+
+/* To File */
+void calDeckListFile(int **L, int *num, int filenum, int *filecnt, int **M, int n, int k);
+void calDeckFileFile(int filenum, int *filecnt, int filenum_new, int *filecnt_new,
+		int *num, int **M, int n, int k);
+void removeDuplicateFile(int t, int *cnt, int n, int k);
+void printDecktoFile(FILE *fptr, int *kdeck, int len);
+void readDeckfromFile(FILE *fptr, int *kdeck, int len);
+
+/* ---------- msc.c ---------- */
+
+/* Msc */
 void printTime(time_t start_t, time_t end_t);
 
 #endif
